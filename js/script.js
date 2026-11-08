@@ -1,6 +1,3 @@
-/* ===================================
-   BLOCKCRAFTERS - ENDTERM JAVASCRIPT
-   =================================== */
 
 // PROJECT DATA ARRAY
 const projects = [
@@ -66,10 +63,8 @@ const services = [
 let favorites = loadFavorites();
 let favoritesOnly = false;
 
-
-// ===================================
 // REUSABLE FUNCTIONS
-// ===================================
+
 
 // Returns a formatted price.
 function formatPrice(price) {
@@ -158,7 +153,6 @@ function saveFavorites() {
   try {
     localStorage.setItem("blockcraftersFavorites", JSON.stringify(favorites));
   } catch (error) {
-    // The gallery still works if browser storage is unavailable.
   }
 }
 
@@ -260,9 +254,8 @@ function displayServices() {
 }
 
 
-// ===================================
 // THEME SWITCHER
-// ===================================
+
 
 function setupThemeSwitcher() {
   const themeButton = document.getElementById("themeToggle");
@@ -290,16 +283,10 @@ function setupThemeSwitcher() {
     try {
       localStorage.setItem("blockcraftersTheme", isLight ? "light" : "dark");
     } catch (error) {
-      // Theme switching still works without storage.
     }
   });
 }
-
-
-// ===================================
 // PROJECT GALLERY AND FAVORITES
-// ===================================
-
 function setupGallery() {
   const gallery = document.getElementById("projectGallery");
   if (!gallery) return;
@@ -386,24 +373,14 @@ function setupGallery() {
     });
   }
 }
-
-
-// ===================================
 // HOME PAGE FEATURED PROJECTS
-// ===================================
-
 function setupFeaturedProjects() {
   const container = document.getElementById("featuredProjects");
   if (!container) return;
 
   displayProjects(projects.slice(0, 3), container);
 }
-
-
-// ===================================
 // PRICE ESTIMATOR
-// ===================================
-
 function setupEstimator() {
   const tierSelect = document.getElementById("estimateTier");
   const sizeSlider = document.getElementById("estimateSize");
@@ -428,12 +405,7 @@ function setupEstimator() {
 
   calculateEstimate();
 }
-
-
-// ===================================
 // CONTACT FORM VALIDATION
-// ===================================
-
 function setupContactForm() {
   const form = document.getElementById("commissionForm");
   if (!form) return;
@@ -584,24 +556,17 @@ function setupContactForm() {
     }
   });
 }
-
-
-// ===================================
 // JQUERY FEATURES
-// ===================================
-
 function setupJQueryFeatures() {
   if (typeof jQuery === "undefined") {
     return;
   }
 
   // jQuery event 1: FAQ click interaction.
-  // closest() and find() are traversal methods.
   $(".faq-list").on("click", ".faq-question", function() {
     const currentItem = $(this).closest(".faq-item");
     const answer = currentItem.find(".faq-answer");
 
-    // Close other answers first.
     $(".faq-list").children(".faq-item").not(currentItem)
       .find(".faq-answer").slideUp(200);
 
@@ -619,17 +584,10 @@ function setupJQueryFeatures() {
   $(document).on("mouseleave", ".project-card", function() {
     $(this).find(".project-image").stop(true).fadeTo(180, 1);
   });
-
   // jQuery selector examples: class selector and ID selector.
-  // Fade in the project cards after they have been created.
   $(".project-card").hide().fadeIn(300);
 }
-
-
-// ===================================
 // INITIALIZE THE WEBSITE
-// ===================================
-
 document.addEventListener("DOMContentLoaded", function() {
   setupThemeSwitcher();
   setupFeaturedProjects();
