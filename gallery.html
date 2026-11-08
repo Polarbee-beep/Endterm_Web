@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | BlockCrafters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">⛏ Block<span>Crafters</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle ms-lg-3" id="themeToggle" type="button" aria-label="Switch colour theme">☀</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <span class="eyebrow">THE PORTFOLIO</span>
+        <h1>Worlds worth exploring.</h1>
+        <p>Browse the collection and save your favourite projects.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="gallery-toolbar">
+        <div class="search-wrap">
+          <label for="projectSearch" class="visually-hidden">Search projects</label>
+          <input type="search" id="projectSearch" class="form-control custom-input" placeholder="Search projects...">
+        </div>
+        <div class="filter-wrap">
+          <label for="categoryFilter" class="visually-hidden">Filter by category</label>
+          <select id="categoryFilter" class="form-select custom-input">
+            <option value="all">All categories</option>
+            <option value="Medieval">Medieval</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Environment">Environment</option>
+          </select>
+        </div>
+        <button type="button" id="favoritesFilter" class="btn btn-outline-custom">♡ Favorites only</button>
+      </div>
+
+      <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+      <div class="row g-4" id="projectGallery"></div>
+      <div class="empty-state d-none" id="emptyGallery">
+        <h3>No projects found.</h3>
+        <p>Try another search or change the category filter.</p>
+        <button type="button" class="btn btn-primary-custom" id="clearFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container favorites-panel">
+        <div>
+          <span class="eyebrow">YOUR COLLECTION</span>
+          <h2>Saved favourites</h2>
+          <p class="muted-text">Your saved projects appear here while you browse this page.</p>
+        </div>
+        <div id="favoriteList" class="favorite-list"><p class="muted-text">You haven't saved any projects yet.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="navbar-brand" href="index.html">⛏ Block<span>Crafters</span></a><p>© 2026 BlockCrafters Studio. Not affiliated with Mojang or Microsoft.</p><a href="contact.html" class="text-link">Contact →</a></div></footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

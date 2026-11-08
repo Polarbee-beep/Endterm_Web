@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Order | BlockCrafters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">⛏ Block<span>Crafters</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle ms-lg-3" id="themeToggle" type="button" aria-label="Switch colour theme">☀</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <span class="eyebrow">LET'S CREATE SOMETHING</span>
+        <h1>Start a commission.</h1>
+        <p>Share your idea and provide the details needed to plan your build.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <span class="eyebrow">GET IN TOUCH</span>
+          <h2>Tell us about your project.</h2>
+          <p class="muted-text">The more detail you provide, the easier it is to understand your vision.</p>
+          <div class="contact-info-card">
+            <span class="feature-icon">✉</span>
+            <h3>Project requests</h3>
+            <p>Use the form to describe the build, its style and your requirements.</p>
+          </div>
+          <div class="contact-info-card">
+            <span class="feature-icon">⌖</span>
+            <h3>Clear references</h3>
+            <p>Include details about the theme, approximate size and intended use.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <form id="commissionForm" class="form-panel" novalidate>
+            <div id="formSuccess" class="success-message d-none" role="status">
+              <strong>Request details validated!</strong>
+              <p class="mb-0">This is a frontend demonstration. Your information has not been sent to a server.</p>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="userName" class="form-label">Name / Minecraft username *</label>
+                <input type="text" id="userName" class="form-control custom-input" placeholder="Your username" autocomplete="name">
+                <small class="field-error" id="userNameError"></small>
+              </div>
+              <div class="col-md-6">
+                <label for="userEmail" class="form-label">Email address *</label>
+                <input type="email" id="userEmail" class="form-control custom-input" placeholder="name@example.com" autocomplete="email">
+                <small class="field-error" id="userEmailError"></small>
+              </div>
+              <div class="col-md-6">
+                <label for="discordTag" class="form-label">Discord username *</label>
+                <input type="text" id="discordTag" class="form-control custom-input" placeholder="username or username#0000">
+                <small class="field-error" id="discordTagError"></small>
+              </div>
+              <div class="col-md-6">
+                <label for="buildTier" class="form-label">Build package *</label>
+                <select id="buildTier" class="form-select custom-input">
+                  <option value="">Choose a package</option>
+                  <option value="Standard Spawn">Standard Spawn — from $49</option>
+                  <option value="Advanced Hub">Advanced Hub — from $129</option>
+                  <option value="Mega World Map">Mega World Map — from $299</option>
+                  <option value="Custom Project">Completely custom project</option>
+                </select>
+                <small class="field-error" id="buildTierError"></small>
+              </div>
+              <div class="col-md-6">
+                <label for="projectType" class="form-label">Project type *</label>
+                <select id="projectType" class="form-select custom-input">
+                  <option value="">Choose a type</option>
+                  <option value="Server spawn">Server spawn</option>
+                  <option value="Hub">Hub</option>
+                  <option value="Adventure map">Adventure map</option>
+                  <option value="Terrain">Custom terrain</option>
+                  <option value="Other">Other</option>
+                </select>
+                <small class="field-error" id="projectTypeError"></small>
+              </div>
+              <div class="col-md-6">
+                <label for="deadline" class="form-label">Preferred deadline</label>
+                <input type="date" id="deadline" class="form-control custom-input">
+                <small class="field-error" id="deadlineError"></small>
+              </div>
+              <div class="col-12">
+                <label for="projectDetails" class="form-label">Project details *</label>
+                <textarea id="projectDetails" class="form-control custom-input" rows="5" placeholder="Describe the theme, size, block palette, references and features you need..."></textarea>
+                <div class="d-flex justify-content-between">
+                  <small class="field-error" id="projectDetailsError"></small>
+                  <small class="muted-text"><span id="characterCount">0</span>/500 characters</small>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="check-row">
+                  <input type="checkbox" id="termsCheck">
+                  <span>I confirm that the information above is correct. *</span>
+                </label>
+                <small class="field-error" id="termsCheckError"></small>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary-custom w-100">Validate commission request →</button>
+                <p class="form-note">Demo only: this form validates your information in the browser and does not send or store it.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="navbar-brand" href="index.html">⛏ Block<span>Crafters</span></a><p>© 2026 BlockCrafters Studio. Not affiliated with Mojang or Microsoft.</p><a href="gallery.html" class="text-link">View gallery →</a></div></footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
